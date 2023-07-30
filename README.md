@@ -2,18 +2,18 @@
 
 
 1- Install requirements.txt packages
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 
 2- run django server
-cd backend
+$ cd backend
 python manage.py runserver
 
 3- Install react packages
-cd ../frontend/
+$ cd ../frontend/
 npm install dependencies
 
 4- start app
-npm start
+$ npm start
 
 
 Enjoy...
