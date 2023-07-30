@@ -1,0 +1,368 @@
+:root {
+  --app-blue: #3399ff;
+  --log-size: 100px;
+}
+
+body {
+  background-color: var(--app-blue);
+}
+.App {
+  height: 100vh;
+  padding: 20px;
+}
+.home {
+  margin: auto;
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.chats {
+  border-radius: 20px;
+  background-color: white;
+  width: 30%;
+  border: 1px solid rgb(0, 140, 255);
+  padding: 10px;
+}
+.chats .search-friend-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+@keyframes search-button {
+  25% {
+    transform: rotate(15deg) translateY(2.5px);
+  }
+  50% {
+    transform: rotate(-15deg) translateY(-2.5px);
+  }
+  75% {
+    transform: rotate(15deg) translateY(2.5px);
+  }
+  100% {
+    transform: rotate(-15deg) translateY(-2.5px);
+  }
+}
+
+.chats .search-friend-form input {
+  background-color: white;
+  width: 100%;
+  border-radius: 20px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+}
+.chats .search-friend-form button {
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+.chats button.animation svg {
+  animation-name: search-button;
+  animation-duration: 0.7s;
+}
+.chats .search-friend-form button svg {
+  color: var(--app-blue);
+  background-color: white;
+  font-size: 20px;
+}
+.chats .friends-number {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.chats .friends-number span {
+  font-size: 30px;
+}
+.chats .friends {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chats .friends .search-result {
+  position: absolute;
+  width: calc(100% - 20px);
+  background-color: rgb(184, 184, 184);
+  z-index: 1;
+}
+.chats .friends .search-result .friend {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+.chats .friends .search-result .friend:hover {
+  border-bottom: 2px solid black;
+}
+
+.chats .friends .search-result .friend .start-conv {
+  position: absolute;
+  right: 10px;
+  border: 0;
+  cursor: pointer;
+}
+.chats .friends .search-result .friend .start-conv svg {
+  border: 0;
+  color: var(--app-blue);
+}
+.chats .friends .search-result h4 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.chats .friends .search-result img {
+  width: 35px;
+  height: 35px;
+}
+.chats .friends .search-result svg {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+.chats .friend {
+  padding-top: 20px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.friend img,
+.friend svg,
+.conv-image img,
+.conv-image svg {
+  border: 1px solid gray;
+}
+.friend svg,
+.conv-image svg {
+  color: rgb(70, 70, 70);
+  padding: 5px;
+  border-radius: 50%;
+}
+.friend svg {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+}
+.friend img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.friend h4 {
+  margin-left: 20px;
+  font-size: 18px;
+}
+.conv-image {
+  padding-right: 10px;
+}
+.conv-image img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.conv-image svg {
+  width: 30px;
+  height: 30px;
+}
+
+.conversation {
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(67.5% - var(--log-size));
+  height: calc(100vh - 40px);
+  border: 1px solid rgb(0, 140, 255);
+  padding: 10px;
+}
+.conversation .search-new-friends {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conversation .search-new-friends button {
+  padding: 10px 20px;
+  font-size: 25px;
+  outline: none;
+  border: 2px white solid;
+  color: white;
+  background-color: var(--app-blue);
+  border-radius: 20px;
+}
+.conversation .search-new-friends button:hover {
+  color: var(--app-blue);
+  background-color: white;
+  border-color: var(--app-blue);
+}
+
+.conversation-header {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.conversation-header .friend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.friend-d {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.friend-d .active-info {
+  font-size: 15px;
+  color: gray;
+  margin: 0;
+}
+.friend .image {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+}
+.friend.active .image::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: rgb(19, 207, 76);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-3px, -3px);
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.icons svg {
+  font-size: 24px;
+  cursor: pointer;
+}
+.icons .info svg {
+  color: rgb(0, 110, 255);
+}
+.icons .trash svg {
+  color: rgb(212, 88, 66);
+}
+.conversation-footer form {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.conversation-footer input {
+  width: 100%;
+}
+
+.conversation-footer svg {
+  padding: 5px 10px;
+  color: rgb(0, 110, 255);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.login-register {
+  background-color: white;
+  width: 400px;
+  margin: 20px auto;
+  padding: 40px 20px;
+  border-radius: 5px;
+}
+.login-register form {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-register form div {
+  display: flex;
+  flex-direction: column;
+}
+.login-register h3 {
+  color: var(--app-blue);
+  font-size: 35px;
+}
+.login-register label {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.login-register input {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+.login-register input[type="submit"] {
+  font-size: 20px;
+  padding: 10px 30px;
+  color: white;
+  background-color: var(--app-blue);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.logout {
+  margin-top: 10px;
+  width: var(--log-size);
+  font-size: 22px;
+  display: flex;
+  height: fit-content;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(63, 62, 62);
+  text-decoration: none;
+}
+.conversation-main {
+  height: calc(100vh - 40px - 72px - 58px);
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.messages {
+  max-height: calc(100vh - 40px - 72px - 58px);
+  display: block;
+}
+.conversation-main .message {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+}
+.conversation-main .message.me {
+  justify-content: flex-end;
+}
+.conversation-main .message .content {
+  background-color: rgb(220, 220, 220);
+  padding: 10px;
+  color: black;
+  border-radius: 20px;
+}
